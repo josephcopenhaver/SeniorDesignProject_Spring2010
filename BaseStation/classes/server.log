@@ -1,0 +1,6 @@
+1272657932090: MAIN: VERSION=1.2
+1272657932091: SubscriberTargeter: Running - Attempting to connect to 127.0.0.1 on port 8000
+1272657932092: SensorServer: Running: 1429
+1272657932102: SensorServer: Serversocket Initialized
+1272657938113: SubscriberTargeter: Connected to Subscriber
+1272657991139: SubscriberTargeter: Disconnected from Subscriber

@@ -1,0 +1,30 @@
+Team 3 WLAN SENSOR README:
+
+To use our module, you must first create a new object instance of our handler:
+
+   WLANHandler wh(<MAC>, <IP>, <SERVERPORT>);
+
+Once the handler object has been created, then you can call the main interface functions of the object:
+
+   wh.queueString(<string_to_deliver>); [void]
+   wh.lock(); [void]
+   wh.getModeType(); [int]
+   wh.getModeVal(); [int]
+   wh.unlock(); [void]
+
+
+The handler object must be locked when calling:
+
+   wh.getModeType();
+   wh.getModeVal();
+
+The lock() operation prevents the listener thread from setting the contents
+when a mode change is received. This means that the space between lock()
+and unlock() statements should be minmal to let the listener run at full
+capacity.
+
+----------------
+
+To allow our program to start automatically, place the file S70sensor in /etc/init.d
+You will need to edit it to change the path where it looks for the sensor program.
+If it doesn't seem to work, try changing the priority by changing the 70 to a different number

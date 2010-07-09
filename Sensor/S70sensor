@@ -1,0 +1,41 @@
+#! /bin/sh
+#
+#This file should be named SXX_ 
+#where XX is a two digit number denoting priority and _ is a descriptive name
+#Place me in /etc/init.d to automatically start the sensor program upon booting
+#If it doesn't seem to work, try changing the priority
+#
+### BEGIN INIT INFO
+# Provides:          Connection to Basestation
+# Required-Start:
+# Required-Stop:
+# Should-Start:      glibc
+# Default-Start:     S
+# Default-Stop:
+# Short-Description:Tries to connect to the Basestation
+# Description:       
+### END INIT INFO
+
+PATH=/sbin:/bin
+
+do_start () {
+/bin/./sensor #change this to the path where the sensor program is
+}
+
+case "$1" in
+  start|"")
+	do_start
+	;;
+  stop|restart|reload|force-reload)
+	echo "Error: argument '$1' not supported" >&2
+	exit 3
+	;;
+  stop)
+	#NO-OP
+	#kill $(pidof sensorsocket)
+	;;
+  *)
+	echo "Usage: sensorsocket.sh [start]" >&2
+	exit 3
+	;;
+esac

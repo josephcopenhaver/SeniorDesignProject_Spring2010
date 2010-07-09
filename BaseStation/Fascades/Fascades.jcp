@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+	<settings>
+		<label>Fascades</label>
+		<root_path>\</root_path>
+		<output_path>classes\</output_path>
+		<source_path>\</source_path>
+		<jdkprofile_ref>JDK version 1.6.0_16</jdkprofile_ref>
+		<compiler_ref/>
+		<ant_ref/>
+	</settings>
+	<ant_events/>
+	<run_items/>
+	<runtimes>
+		<runtime>
+			<label>&lt;Default&gt;</label>
+			<application_ref/>
+			<applet_ref/>
+			<debugger_ref/>
+			<param/>
+			<run/>
+			<verify>true</verify>
+		</runtime>
+	</runtimes>
+	<libraries/>
+	<files>
+		<include>
+			<fileitem>
+				<path>EchoClient.java</path>
+			</fileitem>
+			<fileitem>
+				<path>ListenThread.java</path>
+			</fileitem>
+			<fileitem>
+				<path>ServerFascade.java</path>
+			</fileitem>
+		</include>
+	</files>
+	<tasks>
+		<todotaskitem>
+			<description>TODO: change to file dump</description>
+			<filepath>MyDB.java</filepath>
+			<line>56</line>
+			<timestamp>1272442950</timestamp>
+		</todotaskitem>
+	</tasks>
+</project>

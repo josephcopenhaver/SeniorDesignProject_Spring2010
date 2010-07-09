@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+	<settings>
+		<label>FinalServer</label>
+		<root_path>\</root_path>
+		<output_path>classes\</output_path>
+		<source_path>\</source_path>
+		<jdkprofile_ref>JDK version 1.6.0_16</jdkprofile_ref>
+		<compiler_ref/>
+		<ant_ref/>
+	</settings>
+	<ant_events/>
+	<run_items/>
+	<runtimes>
+		<runtime>
+			<label>&lt;Default&gt;</label>
+			<application_ref/>
+			<applet_ref/>
+			<debugger_ref/>
+			<param/>
+			<run>BaseStation</run>
+			<verify>true</verify>
+		</runtime>
+	</runtimes>
+	<libraries/>
+	<files>
+		<include>
+			<folderitem>
+				<path>classes</path>
+			</folderitem>
+			<fileitem>
+				<path>BaseStation.java</path>
+			</fileitem>
+			<fileitem>
+				<path>LockableSocket.java</path>
+			</fileitem>
+			<fileitem>
+				<path>LogServer.java</path>
+			</fileitem>
+			<fileitem>
+				<path>MyDB.java</path>
+			</fileitem>
+			<fileitem>
+				<path>Sema.java</path>
+			</fileitem>
+			<fileitem>
+				<path>SensorHandle.java</path>
+			</fileitem>
+			<fileitem>
+				<path>SensorServer.java</path>
+			</fileitem>
+			<fileitem>
+				<path>SubscriberTargeter.java</path>
+			</fileitem>
+			<fileitem>
+				<path>classes\server.log</path>
+				<folder>classes</folder>
+			</fileitem>
+		</include>
+	</files>
+	<tasks>
+		<todotaskitem>
+			<description>TODO: change to file dump</description>
+			<filepath>MyDB.java</filepath>
+			<line>88</line>
+			<timestamp>1272653052</timestamp>
+		</todotaskitem>
+	</tasks>
+</project>

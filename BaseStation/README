@@ -1,0 +1,62 @@
+Team 3 WLAN BASESTATION README:
+
+
+
+Usage is displayed via the input words: 
+   h
+   /h
+   -h
+   --h
+   ?
+   /?
+   -?
+   --?
+
+
+
+USAGE: java BaseStation
+        --robustlog
+        --nolog
+        --nostdcopy
+        --sensorport    <#>
+        --logport       <#>
+        --targetport    <#>
+        --target        <IP|HOSTNAME>
+
+
+
+Usage Params Explained:
+
+robustlog:
+   Turns on hightly granular log statements not needed
+   for regular execution. (The default log option
+   documents all exceptions from normal behavior.)
+
+
+nolog:
+   Turns off the file log of the sensor to "sensor.log"
+
+
+nostdcopy:
+   Turns off standard output prints of statements that
+   are logged.
+
+
+sensorport <#>:
+   Specify the sensor server socket port of the base station.
+   (Default is 1429.)
+
+
+logport <#>:
+   Enable a remote log server socket on this port.
+   (The default has this server socket and handle disabled.)
+
+
+targetport <#>:
+   Set the socket port of target subscriber's listening server
+   (Group 4's listening application)
+
+
+target <IP|HOSTNAME>:
+   Set the name/IP of the host running the subscriber application
+   (Group 4's listening application)
