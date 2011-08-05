@@ -47,29 +47,29 @@ class SubscriberTargeter extends Thread
                				myDB.lockMacHash();
                				LockableSocket dstSocket = myDB.getSocketByMac(mac);
                				myDB.unlockMacHash();
+							boolean sendWorked = false;
 	               			if (dstSocket != null && dstSocket.isActive())
                				{
-               					//int sendWorked = false;
-		                  		dstSocket.lockSend();
-                  				//sendWorked = dstSocket.send(msg);
-                  				dstSocket.send(msg);
-                  				// Even if the message fails to be sent,
-                     			// we have successfully stored the mode.
-                     			// We will resend the last set mode
-                     			// when a sensor reconnects.
+               					dstSocket.lockSend();
+                  				sendWorked = dstSocket.send(msg);
                   				dstSocket.unlockSend();
-                  				/*
-                  				if (!sendWorked)
-                  				{
-                  					echo("E|" + mac);
-                  				}
-                  				*/
                   			}
-               				else 
+               				if (!sendWorked)
                				{
                					// Check if the mac has been registered
                					// If so, store the mode for when it
-               					// attempts to reconnect
+               					// attempts to reconnect.
+								// 
+								// The subscriber application must resend
+								// the mode setting periodically as a result
+								// if they receive an error response
+								// for the targeted sensor mac.
+								// 
+								// I am keeping it this way so that if the subscriber
+								// ever bugs out and thinks that there are a million
+								// sensers available, but there are only a couple,
+								// then our software does not slow down because the
+								// database is full of false macs.
                					if (myDB.isMacRegistered(mac))
                					{
                						myDB.lockLastMsgHash();
@@ -82,7 +82,7 @@ class SubscriberTargeter extends Thread
                					}
 		                  		// We echo back this error message if we
 		                  		// are unable to set the mode for a sensor
-		                  		// termination (mac) immediately.
+		                  		// termination (mac) because it has never been seen.
                				}
                			}
             		}
